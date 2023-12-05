@@ -1,0 +1,218 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&family=Raleway:wght@500&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #EEF1FF;
+            font-family: 'Chakra Petch', sans-serif;
+            font-family: 'Raleway', sans-serif;
+        }
+        
+        .hero {
+            margin-top: 20%;
+            justify-content: center;
+            align-items: center;
+            & .col-md-6 {
+                text-align: center;
+            }
+            & h1 {
+                font-size: 3rem;
+            }
+            & img {
+                border-radius: 25% 10%;
+                box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+            }
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        #section1 {
+            height: 100vh;
+        }
+        
+        #section2 {
+            background-color: #AAC4FF;
+            & .parallax {
+                /* Set a specific height */
+                background-image: linear-gradient( to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://wallpaper.dog/large/20513004.png');
+                min-height: 300px;
+                /* Create the parallax scrolling effect */
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        }
+        
+        #section3 {
+            height: 100vh;
+        }
+        
+        @media (max-width: 768px) {
+            img {
+                margin-top: 30px;
+                width: 100%;
+            }
+        }
+        
+        .navbar {
+            transition: background-color 0.3s ease;
+        }
+        
+        .navbar.white {
+            background-color: #fff !important;
+            color: #000 !important;
+            /* ตั้งค่าสีตัวอักษรเป็นดำ */
+        }
+        
+        .navbar-white .navbar-toggler-icon {
+            background-color: #000;
+            /* ตั้งค่าสีตัว hamburger icon */
+        }
+        
+        .navbar-white .navbar-nav .nav-link {
+            color: #000 !important;
+        }
+    </style>
+</head>
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+<body>
+    <div class="main" id="section1">
+        <header class="container">
+            <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+                <div class="container">
+                    <a class="navbar-brand" href="#">
+                        <h1><b><font color="#AAC4FF">Portfolio</font></b></h1>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav ms-auto">
+                            <!-- Add ms-auto class here -->
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="index.html">
+                                    <h5>Home</h5>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="project.html">
+                                    <h5>JS Project </h5>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="api.html">
+                                    <h5>API</h5>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#section3">
+                                    <h5>SKILL </h5>
+                                </a>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="hero">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h1><strong><span id="name" class="w3-animate-opacity"></span></strong></h1>
+                        <p class="text-muted w3-animate-opacity"><strong>department:</strong>เทคโนโลยีสารสนเทศ ( IT )</p>
+                        <p class="text-muted w3-animate-opacity"><strong>Location :</strong> วิทยาลัยเทคนิคขอนแก่น</p>
+                        <h3><span id="element" class="w3-animate-left"></span></h3>
+                        <a href="https://www.facebook.com/profile.php?id=100010516696466" class="btn btn-outline-primary w3-animate-left"><i class="fab fa-facebook"></i> FACEBOOK</a>
+                        <a href="https://github.com/RewSuphakit" class="btn btn-outline-dark w3-animate-right"><i class="fab fa-github"></i> GITHUB</a>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="https://scontent.fkkc2-1.fna.fbcdn.net/v/t39.30808-6/284691342_1668697256824148_6402032171998937775_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=efb6e6&_nc_eui2=AeFvKnuOwR0t-gSHOPVufakE82cBJobfCBzzZwEmht8IHH0mIMxfKN5CUg1Jr8yegY6u-ssXepoqGSiWNOPBtsDR&_nc_ohc=apAPQ35dxjwAX9SkCp5&_nc_ht=scontent.fkkc2-1.fna&oh=00_AfDuLUfjaWioa2jdtHS7VcaYK-86tmsjjRZi9Mq8-ooPHw&oe=65722EDB"
+                            alt="My Portfolio Image" class="img-fluid border  w3-animate-zoom" style="max-width: 500px;">
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    </div>
+
+    <div class="main" id="section2">
+        <div class="parallax">
+            <div class="">
+                <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" alt="JS" width="100px" height="100px">
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    <div class="main" id="section3">
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        var typed = new Typed('#name', {
+            strings: ['<b>Hi,i\'m<font color="#B1B2FF">Rew</font></b>', '<b>Name:<font color="#9c9eff">Suphakit lomlao. </font></b>'],
+            typeSpeed: 60,
+            backDelay: 4000,
+            smartBackspace: true,
+            showCursor: true,
+            cursorChar: '<b><font color="#B1B2FF">|</font></b>',
+            autoInsertCss: true,
+            loop: true
+
+        });
+        var typed = new Typed('#element', {
+            strings: ['<b><font color="#B1B2FF">Full-stack Developer. </font></b>'],
+            typeSpeed: 60,
+            backDelay: 4000,
+            smartBackspace: true,
+            showCursor: true,
+            cursorChar: '<b><font color="#B1B2FF">|</font></b>',
+            autoInsertCss: true,
+            loop: true
+
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    document.querySelector('.navbar').classList.add('white');
+                } else {
+                    document.querySelector('.navbar').classList.remove('white');
+                }
+            });
+        });
+    </script>
+    <script src="https://kit.fontawesome.com/5fc2813d6b.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+
+</html>
