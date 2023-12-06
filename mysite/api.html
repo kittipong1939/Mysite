@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="#home" class="w3-bar-item w3-button"><b>BR</b> Architects</a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="index.html" class="w3-bar-item w3-button">Home</a>
+      <a href="java.html" class="w3-bar-item w3-button">My Project</a>
+      <a href="api.html" class="w3-bar-item w3-button">Api</a>
+    </div>
+  </div>
+</div>
+<canvas id="myChart"></canvas>
+    <canvas id="myChart1"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+const ctx = document.getElementById('myChart1');
+
+new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+    datasets: [{
+      label: '# of Votes',
+      data: [12, 19, 3, 5, 2, 3],
+      borderWidth: 1
+    }]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
+
+const xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
+const yValues = [55, 49, 44, 24, 15];
+const barColors = [
+"#b91d47",
+"#00aba9",
+"#2b5797",
+"#e8c3b9",
+"#1e7145"
+];
+
+
+  fetch('h1.json') // ให้ data.json เป็นชื่อไฟล์ JSON ที่มีข้อมูลที่ให้มา
+    .then(response => response.json())
+    .then(data => {
+      // กรองข้อมูลที่มีค่าไม่ใช่ null ใน key 'height' เพื่อใช้ในการสร้างกราฟ
+      const filteredData = data.filter(item => item.height !== null);
+
+      // แยกข้อมูล 'country' และ 'height' ออกเป็น arrays แยกกัน
+      const countries = filteredData.map(item => item.country);
+      const heights = filteredData.map(item => item.height);
+
+      // สร้างกราฟเส้นโดยใช้ Chart.js
+      const ctx = document.getElementById('myChart');
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: countries, // ใช้ชื่อประเทศเป็น labels ของกราฟ
+          datasets: [{
+            label: 'Height',
+            data: heights, // ใช้ความสูงของประชากรเป็นข้อมูลของกราฟ
+            borderColor: 'blue', // สีของเส้นกราฟ
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+              title: {
+                display: true,
+                text: 'Height' // ตั้งชื่อแกน Y เป็น 'Height'
+              }
+            },
+            x: {
+              title: {
+                display: true,
+                text: 'Country' // ตั้งชื่อแกน X เป็น 'Country'
+              }
+            }
+          }
+        }
+      });
+    })
+    .catch(error => console.error('Error fetching data:', error));
+</script>
+<br>
+<br>
+<div>
+  <form 
+method="POST" 
+action="https://script.google.com/macros/s/AKfycbxF10R6M9TTpJ7Z32o1yBYhnzRT0boUkbwKmz0MMLJfnE6V_HHyUHOMnGN2Cy--rWRKoQ/exec"
+>
+<input name="Email" type="email" placeholder="Email" required>
+<input name="Name" type="text" placeholder="Name" required>
+<button type="submit">Send</button>
+</form>
+</div>
+<div class="w3-content w3-padding" style="max-width:1564px">
+
+<!-- End page content -->
+</div>
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-16">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+
+</body>
+</html>
